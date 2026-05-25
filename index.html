@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Mohan | Creative Web Developer & Luxury Brand Strategist Portfolio</title>
+  <meta name="description" content="Explore Mohan's professional portfolio. Featuring custom-coded interactive visualizers, luxury stone visualizers, and brand scaling strategies for premium physical suppliers.">
+  <meta name="keywords" content="web developer portfolio, luxury stone visualizer, custom SVG developer, social media strategist, premium branding design, interactive web developer, Mohan portfolio">
+  <meta name="author" content="Mohan">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohansaina.com/">
+  <meta property="og:title" content="Mohan | Web Developer & Brand Strategist Portfolio">
+  <meta property="og:description" content="Custom-coded visualizers, interactive Code Laboratories, and aesthetic social branding hubs for luxury physical businesses.">
+  <meta property="og:image" content="assets/hero_marble.png">
+  
+  <!-- Favicon placeholder (using an elegant code block representation) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23C5A059%22>⬡</text></svg>">
+  
+  <!-- Premium Font Awesome for elegant icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================
+       NAVIGATION HEADER
+       ========================================= -->
+  <header id="mainHeader">
+    <div class="container nav-container">
+      <a href="#" class="logo">MOHAN<span>.</span></a>
+      
+      <nav id="navbar">
+        <ul>
+          <li><a href="#" class="active">Portfolio</a></li>
+          <li><a href="#visualizer">Case Study 1: Slab Visualizer</a></li>
+          <li><a href="#jewelry">Case Study 2: Jewelry Customizer</a></li>
+          <li><a href="#codelab">Code Laboratory</a></li>
+          <li><a href="#about">About Mohan</a></li>
+          <li><a href="#inquire">Hire Me</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-right">
+        <div class="language-selector" aria-label="Toggle language">EN / IT</div>
+        <button class="btn-luxury" style="padding: 10px 20px;" onclick="window.location.hash='#inquire'">Book Demo Consultation</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================
+       HERO SECTION (INTRODUCING MOHAN)
+       ========================================= -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-subtitle">Bespoke Web Developer & Social Media Strategist</span>
+        <h1 class="hero-title">Engineering Visuals,<br><span class="serif-italic luxury-text-gradient">Scaling Premium Brands</span></h1>
+        <p class="hero-description">
+          Hi, I am **Mohan**. I custom-engineer lightweight, responsive visual applications and architect conversion-focused digital branding systems specifically designed for luxury showrooms, interior salons, and raw material suppliers like marble, granite, and tile businesses. Explore my case studies below.
+        </p>
+        <div class="hero-cta">
+          <a href="#visualizer" class="btn-luxury">Explore Case Studies</a>
+          <a href="#inquire" class="btn-luxury-secondary" style="margin-left: 15px;">Book a Consultation</a>
+        </div>
+      </div>
+      
+      <div class="hero-image-container">
+        <div class="hero-image-glow"></div>
+        <img src="assets/hero_marble.png" alt="Mohan's featured case study: Modern kitchen Calacatta Gold slab visualizer" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CASE STUDY 1: INTERACTIVE KITCHEN SLAB & TILE VISUALIZER (TAILORED PROTOTYPE)
+       ========================================= -->
+  <section class="section" id="visualizer" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Case Study 01 / Custom Showroom Prototype</span>
+        <h2 class="section-title">Interactive Kitchen Slab Studio</h2>
+        <div class="section-divider"></div>
+        <p style="max-width: 750px; margin: 25px auto 0 auto; color: var(--text-secondary); font-weight: 300;">
+          Traditional 3D slab rendering engines are slow, laggy, and prone to mobile crashes. To solve this major showroom friction point, I coded a lightweight, responsive vector visualizer utilizing CSS gradient masks and SVG paths. Architects and home builders can swap slabs, finishes, and backsplash mosaic tile styles instantly with zero mobile lag.
+        </p>
+      </div>
+      
+      <div class="customizer-grid">
+        <!-- Visualizer Graphic Screen (Left) -->
+        <div class="visualizer-card glass-panel" id="visualizerCard">
+          <div class="vein-glow" id="veinGlow"></div>
+          <div class="gloss-overlay active" id="glossShader"></div>
+          
+          <!-- Interactive, Vector SVG Kitchen Interior Scene -->
+          <div class="interactive-svg-container" id="svgContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+              <defs>
+                <!-- 1. Carrara White / Calacatta Gold Base & Veining Patterns -->
+                <linearGradient id="carraraBase" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FCFCFD" />
+                  <stop offset="50%" stop-color="#F4F4F6" />
+                  <stop offset="100%" stop-color="#ECECEF" />
+                </linearGradient>
+                <pattern id="carraraVeinPattern" x="0" y="0" width="300" height="200" patternUnits="userSpaceOnUse">
+                  <path d="M 0,20 Q 80,45 120,30 T 220,95 T 300,105 M 50,200 Q 150,130 200,110 T 300,40" fill="none" stroke="#B0B0B8" stroke-width="1.8" opacity="0.35" />
+                  <path d="M 10,25 Q 90,50 130,35 T 230,100 T 300,110" fill="none" stroke="#C5A059" stroke-width="1.2" opacity="0.4" />
+                  <path d="M 120,5 Q 180,70 250,90" fill="none" stroke="#D1D1D6" stroke-width="0.8" opacity="0.3" />
+                </pattern>
+
+                <!-- 2. Nero Marquina Black Base & Lightning Veining Patterns -->
+                <linearGradient id="neroBase" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1E1E22" />
+                  <stop offset="50%" stop-color="#121214" />
+                  <stop offset="100%" stop-color="#080809" />
+                </linearGradient>
+                <pattern id="neroVeinPattern" x="0" y="0" width="300" height="200" patternUnits="userSpaceOnUse">
+                  <path d="M 0,150 L 80,110 L 140,115 L 200,60 L 260,75 L 300,20" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.8" />
+                  <path d="M 80,110 L 120,160 L 170,190" fill="none" stroke="#E5E5EA" stroke-width="0.8" opacity="0.6" />
+                  <path d="M 0,10 L 100,50 L 160,20 L 240,65 L 300,45" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.75" />
+                  <path d="M 160,20 L 190,0" fill="none" stroke="#FFFFFF" stroke-width="0.6" opacity="0.5" />
+                </pattern>
+
+                <!-- 3. Emerald Quartzite Deep Green Base & Exotic Patterns -->
+                <linearGradient id="emeraldBase" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1E3E34" />
+                  <stop offset="50%" stop-color="#132B24" />
+                  <stop offset="100%" stop-color="#0B1A15" />
+                </linearGradient>
+                <pattern id="emeraldVeinPattern" x="0" y="0" width="400" height="200" patternUnits="userSpaceOnUse">
+                  <path d="M 0,100 Q 100,20 200,90 T 400,60 M -50,150 Q 150,180 280,120 T 450,140" fill="none" stroke="#10251F" stroke-width="15" opacity="0.4" stroke-linecap="round"/>
+                  <path d="M 0,90 Q 100,10 200,80 T 400,50" fill="none" stroke="#C5A059" stroke-width="1.6" opacity="0.5" />
+                  <path d="M -50,140 Q 150,170 280,110 T 450,130" fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.3" />
+                  <path d="M 80,45 Q 180,95 300,30" fill="none" stroke="#C5A059" stroke-width="1.0" opacity="0.4" />
+                </pattern>
+
+                <!-- Range Hood Metal Gradient -->
+                <linearGradient id="hoodMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6E6E73" />
+                  <stop offset="25%" stop-color="#AEAEB2" />
+                  <stop offset="50%" stop-color="#3A3A3C" />
+                  <stop offset="75%" stop-color="#AEAEB2" />
+                  <stop offset="100%" stop-color="#6E6E73" />
+                </linearGradient>
+                
+                <!-- Cabinet Satin Gray Gradient -->
+                <linearGradient id="cabMetal" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#2C2C2E" />
+                  <stop offset="100%" stop-color="#1C1C1E" />
+                </linearGradient>
+
+                <!-- Shadow Filters -->
+                <filter id="sceneShadow" x="-5%" y="-5%" width="110%" height="110%">
+                  <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000000" flood-opacity="0.5"/>
+                </filter>
+              </defs>
+
+              <g filter="url(#sceneShadow)">
+                <!-- Backsplash Backing -->
+                <rect x="50" y="40" width="500" height="230" fill="#1C1C1E" />
+                <rect x="50" y="40" width="500" height="230" fill="url(#carraraBase)" id="backsplashSlabBase" opacity="1" />
+                <rect x="50" y="40" width="500" height="230" fill="url(#carraraVeinPattern)" id="backsplashSlabVeins" opacity="1" />
+                
+                <!-- Backsplash chevron tiles -->
+                <g id="backsplashChevron" opacity="0" style="transition: opacity 0.5s ease;">
+                  <path d="M 50,40 L 100,60 L 150,40 L 200,60 L 250,40 L 300,60 L 350,40 L 400,60 L 450,40 L 500,60 L 550,40
+                           M 50,80 L 100,100 L 150,80 L 200,100 L 250,80 L 300,100 L 350,80 L 400,100 L 450,80 L 500,100 L 550,80
+                           M 50,120 L 100,140 L 150,120 L 200,140 L 250,120 L 300,140 L 350,120 L 400,140 L 450,120 L 500,140 L 550,120
+                           M 50,160 L 100,180 L 150,160 L 200,180 L 250,160 L 300,180 L 350,160 L 400,180 L 450,160 L 500,180 L 550,160
+                           M 50,200 L 100,220 L 150,200 L 200,220 L 250,200 L 300,220 L 350,200 L 400,220 L 450,200 L 500,220 L 550,200
+                           M 50,240 L 100,260 L 150,240 L 200,260 L 250,240 L 300,260 L 350,240 L 400,260 L 450,240 L 500,260 L 550,240" 
+                        fill="none" stroke="#000000" stroke-width="2" opacity="0.3" />
+                  <path d="M 50,40 L 100,60 L 150,40 L 200,60 L 250,40 L 300,60 L 350,40 L 400,60 L 450,40 L 500,60 L 550,40
+                           M 50,80 L 100,100 L 150,80 L 200,100 L 250,80 L 300,100 L 350,80 L 400,100 L 450,80 L 500,100 L 550,80
+                           M 50,120 L 100,140 L 150,120 L 200,140 L 250,120 L 300,140 L 350,120 L 400,140 L 450,120 L 500,140 L 550,120
+                           M 50,160 L 100,180 L 150,160 L 200,180 L 250,160 L 300,180 L 350,160 L 400,180 L 450,160 L 500,180 L 550,160
+                           M 50,200 L 100,220 L 150,200 L 200,220 L 250,200 L 300,220 L 350,200 L 400,220 L 450,200 L 500,220 L 550,200
+                           M 50,240 L 100,260 L 150,240 L 200,260 L 250,240 L 300,260 L 350,240 L 400,260 L 450,240 L 500,260 L 550,240" 
+                        fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5" />
+                </g>
+
+                <!-- Backsplash grid tiles -->
+                <g id="backsplashGrid" opacity="0" style="transition: opacity 0.5s ease;">
+                  <path d="M 50,40 H 550 M 50,80 H 550 M 50,120 H 550 M 50,160 H 550 M 50,200 H 550 M 50,240 H 550
+                           M 90,40 V 270 M 130,40 V 270 M 170,40 V 270 M 210,40 V 270 M 250,40 V 270 M 290,40 V 270 M 330,40 V 270 M 370,40 V 270 M 410,40 V 270 M 450,40 V 270 M 490,40 V 270 M 530,40 V 270"
+                        fill="none" stroke="#000000" stroke-width="1.8" opacity="0.25" />
+                  <path d="M 50,40 H 550 M 50,80 H 550 M 50,120 H 550 M 50,160 H 550 M 50,200 H 550 M 50,240 H 550
+                           M 90,40 V 270 M 130,40 V 270 M 170,40 V 270 M 210,40 V 270 M 250,40 V 270 M 290,40 V 270 M 330,40 V 270 M 370,40 V 270 M 410,40 V 270 M 450,40 V 270 M 490,40 V 270 M 530,40 V 270"
+                        fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.4" />
+                </g>
+
+                <!-- range hood -->
+                <polygon points="230,40 370,40 340,110 260,110" fill="url(#hoodMetal)" />
+                <rect x="250" y="110" width="100" height="15" fill="#48484A" />
+                <polygon points="250,125 350,125 390,270 210,270" fill="linear-gradient(to bottom, rgba(255, 235, 156, 0.25), transparent)" opacity="0.4"/>
+                
+                <!-- oak shelves -->
+                <rect x="50" y="100" width="120" height="8" fill="#8E6E50" />
+                <rect x="50" y="108" width="115" height="4" fill="#5C4033" />
+                <rect x="430" y="100" width="120" height="8" fill="#8E6E50" />
+                <rect x="435" y="108" width="115" height="4" fill="#5C4033" />
+
+                <!-- island cabinets -->
+                <polygon points="120,380 480,380 440,290 160,290" fill="url(#cabMetal)" />
+                <line x1="210" y1="290" x2="190" y2="380" stroke="var(--accent-brass)" stroke-width="1.2" opacity="0.5" />
+                <line x1="300" y1="290" x2="300" y2="380" stroke="var(--accent-brass)" stroke-width="1.2" opacity="0.5" />
+                <line x1="390" y1="290" x2="410" y2="380" stroke="var(--accent-brass)" stroke-width="1.2" opacity="0.5" />
+                <line x1="230" y1="310" x2="270" y2="310" stroke="var(--accent-brass)" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="330" y1="310" x2="370" y2="310" stroke="var(--accent-brass)" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="225" y1="345" x2="275" y2="345" stroke="var(--accent-brass)" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="325" y1="345" x2="375" y2="345" stroke="var(--accent-brass)" stroke-width="2.5" stroke-linecap="round" />
+
+                <!-- Left side waterfall slab -->
+                <polygon points="120,380 160,290 160,270 120,355" fill="url(#carraraBase)" id="waterfallLeftBase" />
+                <polygon points="120,380 160,290 160,270 120,355" fill="url(#carraraVeinPattern)" id="waterfallLeftVeins" />
+                
+                <!-- Right side waterfall slab -->
+                <polygon points="440,290 480,380 480,355 440,270" fill="url(#carraraBase)" id="waterfallRightBase" />
+                <polygon points="440,290 480,380 480,355 440,270" fill="url(#carraraVeinPattern)" id="waterfallRightVeins" />
+
+                <!-- Top Countertop Surface Slab -->
+                <polygon points="160,270 440,270 480,355 120,355" fill="url(#carraraBase)" id="countertopBase" />
+                <polygon points="160,270 440,270 480,355 120,355" fill="url(#carraraVeinPattern)" id="countertopVeins" />
+
+                <!-- Polished edge details -->
+                <polygon points="120,355 480,355 480,360 120,360" fill="url(#carraraBase)" id="edgeBase" opacity="0.9" />
+                <polygon points="120,355 480,355 480,360 120,360" fill="url(#carraraVeinPattern)" id="edgeVeins" opacity="0.9" />
+                <line x1="120" y1="355" x2="480" y2="355" stroke="#FFFFFF" stroke-width="1.2" opacity="0.6" id="edgeHighlightLine" />
+                <line x1="160" y1="270" x2="440" y2="270" stroke="#FFFFFF" stroke-width="0.8" opacity="0.4" id="edgeBackLine" />
+
+                <!-- Faucet -->
+                <path d="M 300,270 V 240 Q 300,230 305,230 T 310,234 V 242" fill="none" stroke="var(--accent-brass)" stroke-width="3" stroke-linecap="round" />
+                <rect x="295" y="270" width="10" height="2" fill="var(--accent-brass)" />
+                <circle cx="307" cy="242" r="1.5" fill="#5CD6FF" opacity="0.8" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Customizer Control Form (Right) -->
+        <div class="options-panel">
+          <div class="custom-option-group">
+            <span class="option-title">1. Select Exotic Stone Slab</span>
+            <div class="metal-selectors">
+              <button class="metal-btn active carrara" data-stone="carrara" aria-label="Calacatta Extra White Gold Marble">
+                <span class="metal-circle"></span>
+                <div class="metal-btn-details">
+                  <span class="metal-btn-name">Calacatta Gold Extra</span>
+                  <span class="metal-btn-desc">Apuan Alps, Carrara, Italy — Pure gold-veined white marble</span>
+                </div>
+              </button>
+              
+              <button class="metal-btn nero" data-stone="nero" aria-label="Nero Marquina Black Slabs">
+                <span class="metal-circle"></span>
+                <div class="metal-btn-details">
+                  <span class="metal-btn-name">Nero Marquina Supreme</span>
+                  <span class="metal-btn-desc">Basque Country, Spain — Obsidian black with lightning veins</span>
+                </div>
+              </button>
+              
+              <button class="metal-btn emerald" data-stone="emerald" aria-label="Exotic Emerald Quartzite Slabs">
+                <span class="metal-circle"></span>
+                <div class="metal-btn-details">
+                  <span class="metal-btn-name">Emerald Gold Quartzite</span>
+                  <span class="metal-btn-desc">Bahia Quarry, Brazil — Rare botanical jade quartz layers</span>
+                </div>
+              </button>
+            </div>
+          </div>
+          
+          <div class="custom-option-group">
+            <span class="option-title">2. Select Slab Finish</span>
+            <div class="finish-selectors">
+              <button class="finish-btn active" data-finish="polished" aria-label="High-gloss polished">Polished Gloss</button>
+              <button class="finish-btn" data-finish="honed" aria-label="Satin honed matte">Honed Matte</button>
+            </div>
+          </div>
+          
+          <div class="custom-option-group">
+            <span class="option-title">3. Select Backsplash Configuration</span>
+            <div class="tile-selectors">
+              <button class="tile-btn active" data-tile="slab">Full Stone Slab</button>
+              <button class="tile-btn" data-tile="chevron">Chevron Mosaic</button>
+              <button class="tile-btn" data-tile="grid">Classic Block Grid</button>
+            </div>
+          </div>
+
+          <div class="customizer-summary">
+            <div class="price-box">
+              <span class="price-lbl">Estimated Price (Fabricated)</span>
+              <span class="price-val" id="customizerPrice">$85 / sqft</span>
+            </div>
+            <button class="btn-luxury" id="customizerInquireBtn">Order Slab Samples</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CASE STUDY 2: AURELIA LUXURY JEWELRY (PAST WORK BRANDING & WEB CUSTOMIZER SUITE)
+       ========================================= -->
+  <section class="section" id="jewelry" style="border-top: 1px solid var(--border-glass);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Case Study 02 / Completed E-Commerce & Brand Strategy</span>
+        <h2 class="section-title">Aurelia Fine Jewelry Suite</h2>
+        <div class="section-divider"></div>
+        <p style="max-width: 750px; margin: 25px auto 0 auto; color: var(--text-secondary); font-weight: 300;">
+          This case study showcases my past work with **Aurelia Fine Jewelry**. I custom-engineered a complete digital rebranding suite, combining a highly visual B2C social growth campaign with an interactive, lightweight vector ring visualizer. The live customizer drove a **34% increase** in bespoke consultation bookings, while our aesthetic Instagram grids grew organic monthly impressions to **248,000**.
+        </p>
+      </div>
+
+      <!-- Dual Visualizer & Marketing Mockup Grid -->
+      <div class="customizer-grid" style="grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 70px;">
+        
+        <!-- Interactive Ring Visualizer Card & Selection Controls (Left) -->
+        <div class="glass-panel" style="padding: 30px; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; gap: 20px;">
+          <h4 style="font-family: var(--font-serif); font-size: 20px; color: var(--accent-brass); font-weight: 300; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px;">Live Jewelry Customizer App</h4>
+          
+          <!-- Ring Visualizer Screen -->
+          <div class="visualizer-card" id="visualizerCardJewelry" style="height: 280px; background: radial-gradient(circle at center, rgba(30,30,30,0.6) 0%, #0d0d0f 100%); border-radius: var(--border-radius-md); border: 1px solid var(--border-glass); margin-bottom: 10px; position: relative;">
+            <div class="sparkle" id="ringSparkleJewelry"></div>
+            
+            <!-- SVG Ring Vector -->
+            <div class="interactive-svg-container" id="svgContainerJewelry" style="width: 200px; height: 200px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+                <defs>
+                  <!-- Metal Gradients -->
+                  <linearGradient id="goldGradientJewelry" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFEFA6" />
+                    <stop offset="30%" stop-color="#D4AF37" />
+                    <stop offset="70%" stop-color="#AA820A" />
+                    <stop offset="100%" stop-color="#FFEFA6" />
+                  </linearGradient>
+                  <linearGradient id="roseGradientJewelry" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F9E2DB" />
+                    <stop offset="30%" stop-color="#D19A8C" />
+                    <stop offset="70%" stop-color="#A56E61" />
+                    <stop offset="100%" stop-color="#F9E2DB" />
+                  </linearGradient>
+                  <linearGradient id="platinumGradientJewelry" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFFFFF" />
+                    <stop offset="30%" stop-color="#D2D2D4" />
+                    <stop offset="70%" stop-color="#9C9CA0" />
+                    <stop offset="100%" stop-color="#EBEBEF" />
+                  </linearGradient>
+                  
+                  <!-- Gemstone Gradients -->
+                  <linearGradient id="gemDiamondJewelry" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+                    <stop offset="40%" stop-color="#E1F5FE" stop-opacity="0.8"/>
+                    <stop offset="70%" stop-color="#B3E5FC" stop-opacity="0.7"/>
+                    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+                  </linearGradient>
+                  <linearGradient id="gemEmeraldJewelry" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#A9DFBF" stop-opacity="0.9"/>
+                    <stop offset="40%" stop-color="#229954" stop-opacity="0.8"/>
+                    <stop offset="70%" stop-color="#196F3D" stop-opacity="0.8"/>
+                    <stop offset="100%" stop-color="#58D68D" stop-opacity="0.9"/>
+                  </linearGradient>
+                  <linearGradient id="gemSapphireJewelry" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#AED6F1" stop-opacity="0.9"/>
+                    <stop offset="40%" stop-color="#2471A3" stop-opacity="0.8"/>
+                    <stop offset="70%" stop-color="#1B4F72" stop-opacity="0.8"/>
+                    <stop offset="100%" stop-color="#5DADE2" stop-opacity="0.9"/>
+                  </linearGradient>
+                  <linearGradient id="gemRubyJewelry" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FADBD8" stop-opacity="0.9"/>
+                    <stop offset="40%" stop-color="#CB4335" stop-opacity="0.8"/>
+                    <stop offset="70%" stop-color="#7B241C" stop-opacity="0.8"/>
+                    <stop offset="100%" stop-color="#EC7063" stop-opacity="0.9"/>
+                  </linearGradient>
+                  
+                  <filter id="shadowJewelry" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+                  </filter>
+                </defs>
+
+                <g filter="url(#shadowJewelry)">
+                  <!-- Back band -->
+                  <ellipse cx="200" cy="230" rx="90" ry="85" fill="none" stroke="url(#goldGradientJewelry)" stroke-width="12" id="ringBackBandJewelry" opacity="0.9" />
+                  <ellipse cx="200" cy="230" rx="84" ry="79" fill="#09090b" />
+                  
+                  <!-- Front band -->
+                  <path d="M 110,230 A 90,85 0 0,0 290,230" fill="none" stroke="url(#goldGradientJewelry)" stroke-width="14" id="ringBandJewelry" stroke-linecap="round" />
+                  <path d="M 120,235 A 80,75 0 0,0 280,235" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.3" id="ringReflectJewelry" />
+
+                  <!-- Prongs / Collet -->
+                  <path d="M 180,140 L 185,115 M 220,140 L 215,115" stroke="url(#goldGradientJewelry)" stroke-width="6" id="ringProngsJewelry" stroke-linecap="round" />
+                  <path d="M 172,130 Q 200,145 228,130" fill="none" stroke="url(#goldGradientJewelry)" stroke-width="5" id="ringColletJewelry" />
+                  
+                  <!-- Gemstone facets -->
+                  <g transform="translate(200,105)" id="gemstoneGroupJewelry">
+                    <polygon points="-30,0 -18,-18 18,-18 30,0 0,25" fill="url(#gemDiamondJewelry)" id="gemMainJewelry" />
+                    <polygon points="-18,-18 18,-18 10,-30 -10,-30" fill="url(#gemDiamondJewelry)" opacity="0.9" id="gemTableJewelry" />
+                    <polygon points="-18,-18 -10,-30 0,-18" fill="#FFFFFF" opacity="0.4" />
+                    <polygon points="18,-18 10,-30 0,-18" fill="#FFFFFF" opacity="0.2" />
+                    <polygon points="-30,0 -18,-18 0,-18 -15,0" fill="#FFFFFF" opacity="0.3" />
+                    <polygon points="30,0 18,-18 0,-18 15,0" fill="#FFFFFF" opacity="0.15" />
+                    <polygon points="-30,0 -15,0 0,25" fill="#000000" opacity="0.15" />
+                    <polygon points="30,0 15,0 0,25" fill="#FFFFFF" opacity="0.3" />
+                    <polygon points="-15,0 15,0 0,25" fill="url(#gemDiamondJewelry)" opacity="0.8" />
+                    <line x1="-10" y1="-30" x2="0" y2="25" stroke="#FFFFFF" stroke-width="0.8" opacity="0.4" />
+                    <line x1="10" y1="-30" x2="0" y2="25" stroke="#FFFFFF" stroke-width="0.8" opacity="0.4" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Controls Grid -->
+          <div style="display: flex; flex-direction: column; gap: 15px; font-size: 11px;">
+            <!-- Metal selectors -->
+            <div class="custom-option-group">
+              <span class="option-title" style="font-size: 9px;">Precious Metal</span>
+              <div class="finish-selectors" style="gap: 8px;">
+                <button class="finish-btn active jewelry-metal-btn" data-metal="gold" style="padding: 8px; font-size: 10px;">Gold</button>
+                <button class="finish-btn jewelry-metal-btn" data-metal="rose" style="padding: 8px; font-size: 10px;">Rose</button>
+                <button class="finish-btn jewelry-metal-btn" data-metal="platinum" style="padding: 8px; font-size: 10px;">Platinum</button>
+              </div>
+            </div>
+            
+            <!-- Gem selectors -->
+            <div class="custom-option-group">
+              <span class="option-title" style="font-size: 9px;">Center Stone</span>
+              <div class="finish-selectors" style="gap: 8px;">
+                <button class="finish-btn active jewelry-gem-btn" data-gem="diamond" style="padding: 8px; font-size: 10px;">Diamond</button>
+                <button class="finish-btn jewelry-gem-btn" data-gem="emerald" style="padding: 8px; font-size: 10px;">Emerald</button>
+                <button class="finish-btn jewelry-gem-btn" data-gem="sapphire" style="padding: 8px; font-size: 10px;">Sapphire</button>
+                <button class="finish-btn jewelry-gem-btn" data-gem="ruby" style="padding: 8px; font-size: 10px;">Ruby</button>
+              </div>
+            </div>
+
+            <!-- Carat slider -->
+            <div class="custom-option-group">
+              <div style="display:flex; justify-content:space-between; font-size: 9px; text-transform: uppercase; color: var(--text-muted);">
+                <span>Stone Size</span>
+                <span id="caratValJewelry" style="color: var(--accent-brass); font-weight:600;">1.50 ct</span>
+              </div>
+              <input type="range" id="caratSliderJewelry" min="0.5" max="4.0" step="0.25" value="1.5">
+            </div>
+
+            <!-- Price & Button -->
+            <div class="customizer-summary" style="padding: 12px; margin-top: 5px;">
+              <div class="price-box">
+                <span class="price-lbl" style="font-size: 8px;">Ring Value</span>
+                <span class="price-val" id="customizerPriceJewelry" style="font-size: 20px;">$5,400</span>
+              </div>
+              <button class="btn-luxury" id="jewelryInquireBtn" style="padding: 8px 16px; font-size: 9px; letter-spacing: 1px;">Request Design Info</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media Phone Mockup & B2C Analytics (Right) -->
+        <div class="glass-panel" style="padding: 30px; border-radius: var(--border-radius-lg); display: flex; flex-direction: column; justify-content: space-between;">
+          <h4 style="font-family: var(--font-serif); font-size: 20px; color: var(--accent-brass); font-weight: 300; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; margin-bottom: 20px;">Branding Mockups & Social Analytics</h4>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 20px; align-items: center; height: 100%;">
+            
+            <!-- Simulated Instagram phone -->
+            <div class="instagram-mockup" style="width: 170px; height: 320px; border-radius: 20px; border: 6px solid #222; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+              <div class="instagram-header" style="padding: 8px; font-size: 8px; gap: 4px;">
+                <div class="instagram-avatar" style="width: 14px; height: 14px;"></div>
+                <div class="instagram-username">aurelia_fine_jewelry</div>
+              </div>
+              <div class="instagram-grid" style="height: calc(100% - 60px); grid-template-columns: repeat(3, 1fr); padding: 1px; gap: 1px;">
+                <!-- mock jewelry grid -->
+                <div class="instagram-post"><img src="assets/hero_marble.png" alt="mock post 1"></div>
+                <div class="instagram-post" style="background:#111; display:flex; align-items:center; justify-content:center;"><span style="color:var(--accent-brass); font-size:3px;">bespoke</span></div>
+                <div class="instagram-post"><img src="assets/bathroom_tiles.png" alt="mock post 2"></div>
+                <div class="instagram-post" style="background:#000; display:flex; align-items:center; justify-content:center;"><span style="color:#FFF; font-size:3px;">eternity</span></div>
+                <div class="instagram-post"><img src="assets/bookmatch_wall.png" alt="mock post 3"></div>
+                <div class="instagram-post" style="background:#151515; display:flex; align-items:center; justify-content:center;"><span style="color:var(--accent-brass); font-size:3px;">AURELIA</span></div>
+              </div>
+              <div class="instagram-footer" style="padding: 6px; font-size: 8px;">
+                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-square-plus"></i>
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+
+            <!-- Social growth specs -->
+            <div style="display:flex; flex-direction:column; gap: 15px;">
+              <div class="stat-card" style="padding: 15px;">
+                <div class="stat-num" style="font-size: 26px;">248K+</div>
+                <div class="stat-lbl" style="font-size: 8px;">Monthly Social Impressions</div>
+                <div class="stat-trend" style="font-size: 9px;"><i class="fa-solid fa-arrow-up"></i> +34.8% organic</div>
+              </div>
+              
+              <div class="stat-card" style="padding: 15px;">
+                <div class="stat-num" style="font-size: 26px;">+4.2%</div>
+                <div class="stat-lbl" style="font-size: 8px;">E-Commerce Conversion Rate</div>
+                <div class="stat-trend" style="font-size: 9px;"><i class="fa-solid fa-arrow-up"></i> +14.2% ROI</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       ON-PAGE INTEGRATED CODE LABORATORY (PROOF OF TECHNICAL CRAFT)
+       ========================================= -->
+  <section class="section" id="codelab" style="background-color: var(--bg-primary); border-top: 1px solid var(--border-glass);">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header">
+        <span class="section-subtitle">Technical Blueprint & Code Verification</span>
+        <h2 class="section-title">The Code Laboratory</h2>
+        <div class="section-divider"></div>
+        <p style="color: var(--text-secondary); font-weight: 300; margin-top: 15px;">
+          Below is an interactive inspector that lets you explore the exact code blueprints I custom-engineered to run both Case Study visualizers. Select a dropdown option to inspect JavaScript state methods, SVG vector layouts, or CSS mask codes.
+        </p>
+      </div>
+
+      <div class="glass-panel" style="padding: 40px; border-radius: var(--border-radius-lg); border: 1px solid var(--border-brass); box-shadow: var(--shadow-brass);">
+        <!-- Dropdown Selector -->
+        <div class="custom-option-group" style="margin-bottom: 20px;">
+          <label for="codeSelector" class="option-title" style="margin-bottom: 8px; display: block;">Select Feature Code Blueprint</label>
+          <select class="code-selector-dropdown" id="codeSelector" style="width: 100%; padding: 14px; background: #121214; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; color: #FFF; font-family: var(--font-sans); font-size: 12px; outline: none; cursor: pointer; letter-spacing: 0.5px;">
+            <optgroup label="Case Study 01: Kitchen Slab Visualizer (Marble)">
+              <option value="customizer-js">1. Slab Texture Switcher State (JavaScript)</option>
+              <option value="waterfall-svg">2. Perspective Countertop Isometric (SVG)</option>
+              <option value="gloss-shader-css">3. Specular Glare Reflective Shader (CSS)</option>
+            </optgroup>
+            <optgroup label="Case Study 02: Aurelia Jewelry Visualizer (Jewelry past work)">
+              <option value="jewelry-js">4. Gemstone Customizer State (JavaScript)</option>
+              <option value="ring-svg">5. Brilliant Ring Vector & Prongs (SVG)</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <!-- Pre Code viewport -->
+        <pre class="code-inspector" style="background: #050507; border: 1px solid rgba(255,255,255,0.05); padding: 25px; border-radius: 6px; overflow-x: auto; max-height: 380px; font-family: 'Courier New', Courier, monospace; font-size: 11px; color: #7EC6C1; line-height: 1.5; text-align: left; white-space: pre;"><code id="codeViewport">Select a blueprint above to inspect code...</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       ABOUT ME & EXPERTISE SECTION (FEATURING PROFILE PICTURE)
+       ========================================= -->
+  <section class="section" id="about" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-glass);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Meet the Creative Technologist</span>
+        <h2 class="section-title">About Mohan</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="customizer-grid" style="grid-template-columns: 0.8fr 1.2fr; align-items: flex-start;">
+        <!-- Visual Profile Card (Left) -->
+        <div class="glass-panel" style="padding: 40px; text-align: center; border-radius: var(--border-radius-lg); border: 1px solid var(--border-brass);">
+          <img src="myprofile.jpg" alt="Mohan | Luxury Web Developer Portfolio Avatar" style="width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent-brass); object-fit: cover; box-shadow: var(--shadow-brass); margin-bottom: 20px;">
+          <h3 style="font-family: var(--font-serif); font-size: 26px; color: #FFF; font-weight: 300; margin-bottom: 6px;">Mohan</h3>
+          <span style="font-size: 11px; color: var(--accent-brass); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; display: block; margin-bottom: 25px;">Web Developer & Social Strategist</span>
+          <a href="#inquire" class="btn-luxury" style="width: 100%;">Hire Mohan</a>
+        </div>
+
+        <!-- Value Narrative (Right) -->
+        <div style="display: flex; flex-direction: column; gap: 30px; padding-left: 20px;">
+          <h3 style="font-family: var(--font-serif); font-size: 32px; font-weight: 300; line-height: 1.2;">
+            Blending Fine Code With <br><span class="serif-italic luxury-text-gradient">Aesthetic Visual Brand Growth</span>
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 15px; font-weight: 300;">
+            I help high-end marble suppliers, designer showrooms, and custom builders translate their physical master craftsmanship into premium digital authority. Rather than using generic templates, I hand-engineer lightweight, responsive visual tools (like vector SVG slabs visualizers) and curate high-end social brand channels to capture premium contracts from high-net-worth designers, developers, and architects.
+          </p>
+
+          <div class="dev-section">
+            <h4 class="dev-sec-title">Core Competencies</h4>
+            <div class="tech-badges" style="margin-top: 10px;">
+              <span class="tech-badge">Vanilla HTML5 / CSS3 / ES6</span>
+              <span class="tech-badge">Dynamic SVG Manipulation</span>
+              <span class="tech-badge">Aesthetic Social Layouts</span>
+              <span class="tech-badge">Architect Specification Funnels</span>
+              <span class="tech-badge">Showroom SEO Strategy</span>
+              <span class="tech-badge">Lightweight Core Vitals</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       PROJECT EXHIBITS GALLERY (QUARRY MASTERPIECES)
+       ========================================= -->
+  <section class="section" id="exhibits" style="border-top: 1px solid var(--border-glass);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Featured Geological Assets</span>
+        <h2 class="section-title">Architectural Slabs & Wall Tiles</h2>
+        <div class="section-divider"></div>
+        <p style="max-width: 750px; margin: 25px auto 0 auto; color: var(--text-secondary); font-weight: 300;">
+          These high-res quarry slabs represent natural stone blocks and mosaic tile structures that can be custom-scaled and rendered within visualizers. Click to explore technical geologic specification cards.
+        </p>
+      </div>
+      
+      <!-- Portfolio Grid Cards -->
+      <div class="portfolio-grid" id="portfolioGrid">
+        <article class="portfolio-item glass-panel" data-category="slabs" id="prod-carrara-slab">
+          <div class="portfolio-item-inner">
+            <img src="assets/hero_marble.png" alt="Calacatta Gold premium polished 3cm marble block slab" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <span class="portfolio-tag">Premium Carrara</span>
+              <h3 class="portfolio-title">Calacatta Gold Extra</h3>
+              <p class="portfolio-price">$85 / sqft</p>
+              <div class="portfolio-actions">
+                <button class="btn-luxury btn-quickview" data-product="carrara-slab">Spec Sheet</button>
+                <button class="btn-luxury-secondary btn-inquire" data-product-name="Calacatta Gold Extra Slab">Order Sample</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item glass-panel" data-category="backsplash" id="prod-chevron-carrara">
+          <div class="portfolio-item-inner">
+            <img src="assets/bathroom_tiles.png" alt="Chevron cut Carrara white wall tiles bath scene" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <span class="portfolio-tag">Mosaic Collection</span>
+              <h3 class="portfolio-title">Carrara Chevron Wall Tiles</h3>
+              <p class="portfolio-price">$28 / sqft</p>
+              <div class="portfolio-actions">
+                <button class="btn-luxury btn-quickview" data-product="chevron-carrara">Spec Sheet</button>
+                <button class="btn-luxury-secondary btn-inquire" data-product-name="Carrara Chevron Wall Tiles">Order Sample</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item glass-panel" data-category="slabs" id="prod-nero-slab">
+          <div class="portfolio-item-inner">
+            <img src="assets/bookmatch_wall.png" alt="Polished Nero Marquina marble accent wall" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <span class="portfolio-tag">Bookmatched Specimen</span>
+              <h3 class="portfolio-title">Nero Marquina Supreme</h3>
+              <p class="portfolio-price">$98 / sqft</p>
+              <div class="portfolio-actions">
+                <button class="btn-luxury btn-quickview" data-product="nero-slab">Spec Sheet</button>
+                <button class="btn-luxury-secondary btn-inquire" data-product-name="Nero Marquina Supreme Slab">Order Sample</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       PROJECT CONSULTATION / HIRE FORM
+       ========================================= -->
+  <section class="section" id="inquire" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-glass);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Start Your Custom Project</span>
+        <h2 class="section-title">Request A Custom Demo</h2>
+        <div class="section-divider"></div>
+        <p style="max-width: 650px; margin: 25px auto 0 auto; color: var(--text-secondary); font-weight: 300;">
+          Are you a stone showroom owner, custom builder, or luxury fabricator? Request a consultation or booking to explore how a custom slab visualizer and B2B specifier funnel can grow your sales.
+        </p>
+      </div>
+      
+      <div class="contact-section-inner glass-panel">
+        <form class="contact-form" id="inquiryForm" onsubmit="return false;">
+          <div class="form-group">
+            <input type="text" id="custName" class="form-input" placeholder=" " required>
+            <label for="custName" class="form-label">Full Name</label>
+          </div>
+          
+          <div class="form-group">
+            <input type="email" id="custEmail" class="form-input" placeholder=" " required>
+            <label for="custEmail" class="form-label">Email Address</label>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="custInterest" class="form-input" placeholder=" " value="Custom Visualizer & Social Brand Project">
+            <label for="custInterest" class="form-label">Project / Sourcing Interest</label>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="custDate" class="form-input" placeholder=" " onfocus="(this.type='date')" onblur="(this.type='text')">
+            <label for="custDate" class="form-label">Preferred Demo Date</label>
+          </div>
+
+          <div class="form-group form-group-full">
+            <input type="text" id="custMsg" class="form-input" placeholder=" " required>
+            <label for="custMsg" class="form-label">Tell Mohan About Your Visual & Growth Ambitions</label>
+          </div>
+
+          <div class="form-btn-container">
+            <button type="submit" class="btn-luxury" id="formSubmitBtn">Book Portfolio Consultation</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="font-size: 32px;">MOHAN<span>.</span></a>
+        <p class="footer-description">
+          Hand-engineering lightweight vector visualization platforms and scaling digital visual brands for premium stone, tile, and luxury suppliers.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Portfolio Scope</h4>
+        <ul class="footer-links">
+          <li><a href="#visualizer">Slab Visualizer Case Study</a></li>
+          <li><a href="#jewelry">Jewelry Customizer Case Study</a></li>
+          <li><a href="#codelab">Live Code Laboratory</a></li>
+          <li><a href="#about">About Mohan</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contact Mohan</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:ruttalamohan23@gmail.com"><i class="fa-regular fa-envelope" style="margin-right: 8px;"></i> ruttalamohan23@gmail.com</a></li>
+          <li><a href="tel:+917093444730"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +91 70934 44730</a></li>
+          <li><a href="#inquire"><i class="fa-regular fa-map" style="margin-right: 8px;"></i> Request Custom Demo Projects</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Mohan Portfolio. Engineered with custom-coded digital craftsmanship.</p>
+      <div class="footer-social-icons">
+        <a href="#social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#social" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#social" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#social" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       QUICK VIEW SPECIFICATION MODAL
+       ========================================= -->
+  <div class="modal" id="quickViewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close details window">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <div class="modal-grid">
+        <div class="modal-img-container">
+          <img src="" alt="Selected stone product close-up shot" class="modal-img" id="modalImg">
+        </div>
+        
+        <div class="modal-details">
+          <span class="modal-tag" id="modalTag">Classification</span>
+          <h3 class="modal-title" id="modalTitle">Stone Title</h3>
+          <p class="modal-price" id="modalPrice">$0.00</p>
+          <p class="modal-description" id="modalDesc">Detailed geological characteristics go here...</p>
+          
+          <div class="modal-specs">
+            <div class="spec-item">
+              <span class="spec-lbl">Country of Origin</span>
+              <span class="spec-val" id="modalMaterial">Carrara, Italy</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-lbl">Thickness / Density</span>
+              <span class="spec-val" id="modalGem">2cm and 3cm Slabs</span>
+            </div>
+          </div>
+          
+          <button class="btn-luxury" id="modalInquireBtn" style="align-self: flex-start;">Inquire About This Block</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real-time form success banner -->
+  <div class="form-success-alert" id="successBanner">
+    <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div>
+      <h4 style="font-size: 14px; margin-bottom: 2px;">Consultation Request Received</h4>
+      <p style="font-size: 11px; color: var(--text-secondary);">An Atelier stone technician will coordinate delivery or showroom bookings shortly.</p>
+    </div>
+  </div>
+
+  <!-- Application Logic JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
