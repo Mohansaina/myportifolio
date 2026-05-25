@@ -712,13 +712,6 @@ function applyJewelryChanges() {
         
         // Prepare FormData from the live form
         const formData = new FormData(inquiryForm);
-        
-        // Add specific data mappings for Web3Forms template
-        formData.append('name', document.getElementById('custName').value);
-        formData.append('email', document.getElementById('custEmail').value);
-        formData.append('project_interest', document.getElementById('custInterest').value);
-        formData.append('demo_date', document.getElementById('custDate').value);
-        formData.append('message', document.getElementById('custMsg').value);
 
         // Execute asynchronous fetch POST to Web3Forms API
         fetch('https://api.web3forms.com/submit', {
