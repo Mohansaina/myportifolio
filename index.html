@@ -674,7 +674,14 @@
       </div>
       
       <div class="contact-section-inner glass-panel">
-        <form class="contact-form" id="inquiryForm" onsubmit="return false;">
+        <form class="contact-form" id="inquiryForm">
+          <!-- Web3Forms Live Form Configuration -->
+          <input type="hidden" name="access_key" value="08672c44-72a3-4eb2-9090-a6f948f338ec">
+          <input type="hidden" name="subject" value="New Portfolio Demo Inquiry from Mohan's Portfolio">
+          <input type="hidden" name="from_name" value="Mohan Portfolio Partner">
+          <!-- Honeypot Spam Protection -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
           <div class="form-group">
             <input type="text" id="custName" class="form-input" placeholder=" " required>
             <label for="custName" class="form-label">Full Name</label>

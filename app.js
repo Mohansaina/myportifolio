@@ -695,7 +695,7 @@ function applyJewelryChanges() {
 
 
   // ==========================================
-  // 7. INQUIRY FORM SUCCESS STATE HANDLING
+  // 7. INQUIRY FORM SUCCESS STATE HANDLING (LIVE WEB3FORMS SUBMISSION)
   // ==========================================
   const inquiryForm = document.getElementById('inquiryForm');
   const successBanner = document.getElementById('successBanner');
@@ -707,28 +707,56 @@ function applyJewelryChanges() {
       
       if (formSubmitBtn) {
         const originalText = formSubmitBtn.textContent;
-        formSubmitBtn.textContent = 'Allocating Quarry Spec...';
+        formSubmitBtn.textContent = 'Sending Message...';
         formSubmitBtn.disabled = true;
         
-        setTimeout(() => {
+        // Prepare FormData from the live form
+        const formData = new FormData(inquiryForm);
+        
+        // Add specific data mappings for Web3Forms template
+        formData.append('name', document.getElementById('custName').value);
+        formData.append('email', document.getElementById('custEmail').value);
+        formData.append('project_interest', document.getElementById('custInterest').value);
+        formData.append('demo_date', document.getElementById('custDate').value);
+        formData.append('message', document.getElementById('custMsg').value);
+
+        // Execute asynchronous fetch POST to Web3Forms API
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
           formSubmitBtn.textContent = originalText;
           formSubmitBtn.disabled = false;
           
-          if (successBanner) {
-            successBanner.classList.add('active');
-            setTimeout(() => {
-              successBanner.classList.remove('active');
-            }, 4000);
+          if (data.success) {
+            // Trigger beautiful glassmorphic success banner
+            if (successBanner) {
+              successBanner.classList.add('active');
+              setTimeout(() => {
+                successBanner.classList.remove('active');
+              }, 4000);
+            }
+            
+            // Reset the form
+            inquiryForm.reset();
+            
+            // Force labels to slide back down
+            const inputs = inquiryForm.querySelectorAll('.form-input');
+            inputs.forEach(input => {
+              input.dispatchEvent(new Event('blur'));
+            });
+          } else {
+            alert('Submission failed: ' + (data.message || 'Unknown error.'));
           }
-          
-          inquiryForm.reset();
-          
-          const inputs = inquiryForm.querySelectorAll('.form-input');
-          inputs.forEach(input => {
-            input.dispatchEvent(new Event('blur'));
-          });
-          
-        }, 800);
+        })
+        .catch(error => {
+          formSubmitBtn.textContent = originalText;
+          formSubmitBtn.disabled = false;
+          alert('Submission error. Please check your network connection.');
+          console.error('Error submitting form:', error);
+        });
       }
     });
   }
